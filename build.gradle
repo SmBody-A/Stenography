@@ -1,0 +1,72 @@
+plugins {
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+    id 'org.beryx.jlink' version '3.0.1'
+}
+
+group 'work'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainModule = 'work.art'
+    mainClass = 'work.art.SApplication'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+javafx {
+    version = '21.0.7'
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+dependencies {
+    implementation 'org.xerial:sqlite-jdbc:3.45.0.0'
+}
+
+jlink {
+    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+
+    addExtraDependencies("javafx", "sqlite-jdbc")
+
+    launcher {
+        name = 'StenoSec'
+        jvmArgs = [
+                '-Dfile.encoding=UTF-8',
+                '-Xmx512m'
+        ]
+    }
+
+    jpackage {
+        jpackageHome = System.getenv('JAVA_HOME') ?: 'C:/Program Files/Java/jdk-21'
+        skipInstaller = true
+
+        imageOptions = [
+                '--icon', 'src/main/resources/icons/pen1.ico'
+        ]
+    }
+}
+
+// Задача для копирования БД (как в изначальном рабочем варианте)
+tasks.register('copyDatabase', Copy) {
+    from 'Database'
+    into "${buildDir}/jpackage/StenoSec/Database"
+}
+
+// Новая задача для копирования изображений
+tasks.register('copyImages', Copy) {
+    from 'src/main/resources/images'
+    into "${buildDir}/jpackage/StenoSec/src/main/resources/images"
+}
+
+// Зависимости между задачами
+tasks.named('jpackage') {
+    finalizedBy 'copyDatabase'
+    finalizedBy 'copyImages'
+}

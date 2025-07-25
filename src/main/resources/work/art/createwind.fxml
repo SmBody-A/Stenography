@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity"
+          minHeight="-Infinity" minWidth="-Infinity"
+          prefHeight="500.0" prefWidth="400.0"
+          stylesheets="@/styles.css" styleClass="WindowStyle"
+          xmlns="http://javafx.com/javafx/21.0.7" xmlns:fx="http://javafx.com/fxml/1" fx:controller="work.art.CreateController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="211.0" minHeight="10.0" prefHeight="211.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="174.0" minHeight="10.0" prefHeight="163.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="157.0" minHeight="10.0" prefHeight="126.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Button fx:id="SaveButton" styleClass="UIbg" mnemonicParsing="false" onAction="#SaveShort" prefHeight="62.0" prefWidth="170.0" text="Сохранить" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+         <children>
+            <ComboBox fx:id="CategList" styleClass="UIbg" layoutX="150.0" layoutY="30.0" prefHeight="30.0" prefWidth="210.0" />
+
+            <Text layoutX="40.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Категория:" />
+            <Text layoutX="40.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Название:" />
+            <TextArea fx:id="Name" styleClass="UIbg" layoutX="150.0" layoutY="76.0" prefHeight="75.0" prefWidth="210.0" />
+         </children>
+      </AnchorPane>
+      <Canvas fx:id="PaintPlace" height="200.0" onKeyPressed="#RollBack" onMouseDragged="#setMouseDragged" onMousePressed="#setMousePressed" onMouseReleased="#setMouseReleased" width="340.0" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin>
+      </Canvas>
+      <Button fx:id="ClearButton"  mnemonicParsing="false" onAction="#clearImg" prefHeight="36.0" prefWidth="36.0" styleClass="ClearButton" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets right="5.0" top="20.0" />
+         </GridPane.margin>
+      </Button>
+      <Button fx:id="BackBut" mnemonicParsing="false" onAction="#BackPaint" prefHeight="36.0" prefWidth="36.0" styleClass="BackBut" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="20.0" right="5.0" />
+         </GridPane.margin>
+      </Button>
+   </children>
+</GridPane>

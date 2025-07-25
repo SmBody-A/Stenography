@@ -1,0 +1,106 @@
+* {
+    -fx-font-family: "Century Gothic";
+    -fx-font-size: 16px;
+    -fx-fill: white;
+    -fx-font-weight: 500;
+}
+
+.ClearButton, .BackBut, .RedBut{
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position:center;
+
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+.ClearButton{
+    -fx-background-image: url("icons/bucket.png");
+}
+
+.BackBut{
+    -fx-background-image: url("icons/back.png");
+}
+
+.RedBut{
+    -fx-background-image: url("icons/red.png");
+}
+
+.BackBut: hover, .ClearButton: hover, .RedBut: hover{
+    -fx-background-color: #616161;
+   }
+
+.WindowStyle{
+    -fx-background: #242121;
+}
+
+.NavPanel{
+    -fx-border-width: 0 0 15px 0;
+    -fx-border-color: #e8e120;
+    -fx-border-style: solid;
+}
+
+.UIbg{
+    -fx-background-color: #616161;
+}
+
+.UIbg:hover{
+    -fx-background-color: #997134;
+}
+
+.UIbg:pressed{
+    -fx-background-color: #cc9645;
+}
+
+/* Стиль элементов в списке */
+.combo-box-popup .list-cell {
+    -fx-background-color: #616161;  /* Фон элемента */
+    -fx-text-fill: #333333;          /* Цвет текста */
+    -fx-padding: 5px 10px;
+}
+
+/* Стиль элемента при наведении */
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #91918e;  /* Фон при наведении */
+}
+
+
+.scroll-pane {
+    -fx-background-color: transparent; /* Прозрачный фон */
+    -fx-border-color: transparent;    /* Убираем границу */
+}
+
+/* Стиль для вертикального ScrollBar */
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: #e8e120; /* Фон полосы прокрутки */
+    -fx-pref-width: 12px;             /* Ширина вертикального ScrollBar */
+}
+
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: white;     /* Цвет ползунка */
+    -fx-background-radius: 6px;       /* Закругление углов */
+}
+
+/* Ползунок при наведении */
+.scroll-pane .scroll-bar .thumb:hover {
+    -fx-background-color: #85847e;
+}
+
+/* Ползунок при нажатии */
+.scroll-pane .scroll-bar .thumb:pressed {
+    -fx-background-color: #474641;
+}
+
+.CardBorder {
+    -fx-background-color: #242121; /* Цвет фона VBox */
+    -fx-background-radius: 5px;    /* Закругление углов */
+    -fx-effect: dropshadow(gaussian, white, 10, 0.1, 0, 0);
+    -fx-padding: 5px; /* Отступ от границы до содержимого */
+}
+
+
+.ElemMargin {
+    -fx-vgap: 15px; /* Вертикальный отступ между элементами */
+    -fx-hgap: 2px;
+}

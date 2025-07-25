@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity"
+          minHeight="-Infinity" minWidth="-Infinity"
+          prefHeight="660.0" prefWidth="800.0"
+          styleClass="WindowStyle" stylesheets="@/styles.css" xmlns="http://javafx.com/javafx/21.0.7" xmlns:fx="http://javafx.com/fxml/1" fx:controller="work.art.SController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints prefHeight="100.0" vgrow="SOMETIMES" />
+      <RowConstraints prefHeight="500.0" vgrow="SOMETIMES" />
+      <RowConstraints prefHeight="60.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="NavPanel">
+         <children>
+            <Button fx:id="AddButton" layoutX="666.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#AddShort" styleClass="UIbg" text="Добавить" textAlignment="CENTER" />
+            <Button fx:id="ClearButton" layoutX="553.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#ClearFilters" styleClass="UIbg" text="Сбросить" />
+            <ComboBox fx:id="FilterBox" layoutX="21.0" layoutY="40.0" onAction="#ChooseFilter" prefHeight="25.0" prefWidth="200.0" styleClass="UIbg" />
+            <Text layoutX="21.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Категория" />
+            <TextField fx:id="SearchShort" layoutX="268.0" layoutY="40.0" prefHeight="30.0" prefWidth="220.0" styleClass="UIbg" />
+            <Text layoutX="268.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Аббревиатура" />
+         </children>
+      </AnchorPane>
+      <ScrollPane hbarPolicy="NEVER" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="10.0" left="5.0" right="5.0" />
+         </GridPane.margin>
+         <content>
+            <FlowPane fx:id="ListContainer" prefHeight="8.0" prefWidth="790.0" styleClass="ElemMargin" />
+         </content>
+      </ScrollPane>
+      <GridPane GridPane.rowIndex="2">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="45.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="45.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+          <children>
+              <Button fx:id="FirstPage" mnemonicParsing="false" onAction="#ToFirstPage" prefHeight="30.0" prefWidth="45.0" styleClass="UIbg" text="&lt;&lt;" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+              <Button fx:id="LastPage" mnemonicParsing="false" onAction="#ToLastPage" prefHeight="30.0" prefWidth="30.0" styleClass="UIbg" text="&lt;" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+              <Button fx:id="Page1" mnemonicParsing="false" onAction="#ToPage" prefHeight="30.0" prefWidth="45.0" styleClass="UIbg" text="1" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+              <Button fx:id="Page2" mnemonicParsing="false" onAction="#ToPage" prefHeight="30.0" prefWidth="45.0" styleClass="UIbg" text="2" GridPane.columnIndex="4" GridPane.halignment="CENTER" />
+              <Button fx:id="Page3" mnemonicParsing="false" onAction="#ToPage" prefHeight="30.0" prefWidth="45.0" styleClass="UIbg" text="3" GridPane.columnIndex="5" GridPane.halignment="CENTER" />
+              <Button fx:id="Page4" mnemonicParsing="false" onAction="#ToPage" prefHeight="30.0" prefWidth="45.0" styleClass="UIbg" text="4" GridPane.columnIndex="6" GridPane.halignment="CENTER" />
+              <Button fx:id="Page5" mnemonicParsing="false" onAction="#ToPage" prefHeight="30.0" prefWidth="45.0" styleClass="UIbg" text="5" GridPane.columnIndex="7" GridPane.halignment="CENTER" />
+              <Button fx:id="NextPage" mnemonicParsing="false" onAction="#ToNextPage" prefHeight="30.0" prefWidth="30.0" styleClass="UIbg" text="&gt;" GridPane.columnIndex="8" GridPane.halignment="CENTER" />
+              <Button fx:id="EndPage" mnemonicParsing="false" onAction="#ToEndPage" prefHeight="30.0" prefWidth="45.0" styleClass="UIbg" text="&gt;&gt;" GridPane.columnIndex="9" GridPane.halignment="CENTER" />
+          </children>
+      </GridPane>
+   </children>
+</GridPane>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+
+<VBox styleClass="CardBorder" stylesheets="@/styles.css"
+      maxHeight="-Infinity" maxWidth="-Infinity"
+      minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="300.0" prefWidth="250.0"
+      xmlns="http://javafx.com/javafx/21.0.7" xmlns:fx="http://javafx.com/fxml/1" fx:controller="work.art.CardController">
+   <children>
+      <AnchorPane prefHeight="35.0" prefWidth="250.0">
+         <children>
+            <Button fx:id="DelButton" styleClass="BackBut" layoutX="208.0" layoutY="3.0" mnemonicParsing="false" onAction="#DelReduction" prefHeight="30.0" prefWidth="30.0"/>
+            <Button fx:id="RedButton" styleClass="RedBut" layoutX="166.0" layoutY="3.0" mnemonicParsing="false" onAction="#RedReduction" prefHeight="30.0" prefWidth="30.0"/>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="ImageRed" fitHeight="150.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+         <VBox.margin>
+            <Insets left="5.0" right="5.0" />
+         </VBox.margin>
+      </ImageView>
+      <HBox prefHeight="70.0" prefWidth="250.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Назв. ">
+               <HBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </HBox.margin>
+            </Text>
+            <Text fx:id="NameRed" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="130.0">
+               <HBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="40.0" prefWidth="250.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Катег.">
+               <HBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </HBox.margin>
+            </Text>
+            <Text fx:id="CategName" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="135.0">
+               <HBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+   </children>
+</VBox>
